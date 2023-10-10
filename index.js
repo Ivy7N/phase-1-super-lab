@@ -1,1 +1,45 @@
 // Write your classes here
+class Tree {
+    constructor(species) {
+      this.species = species;
+    }
+  
+    static definition() {
+      return "A tree is a perennial plant with an elongated stem, or trunk, supporting branches and leaves.";
+    }
+  }
+  
+  class Deciduous extends Tree {
+    constructor(species, name) {
+      super(species);
+      this.name = name;
+    }
+  
+    static definition() {
+      return `${super.definition()} Deciduous trees shed their leaves annually.`;
+    }
+  }
+  
+  class Evergreen extends Tree {
+    constructor(species, name) {
+      super(species);
+      this.name = name;
+    }
+  
+    static definition() {
+      return `${super.definition()} Evergreens keep their leaves all year round.`;
+    }
+  }
+  
+  // Example usage:
+  const oakTree = new Deciduous("Oak", "Common Oak");
+  const pineTree = new Evergreen("Pine", "Scots Pine");
+  
+  console.log(oakTree.species); // Outputs: "Oak"
+  console.log(oakTree.name);    // Outputs: "Common Oak"
+  console.log(Deciduous.definition()); // Outputs the specific definition for Deciduous trees
+  
+  console.log(pineTree.species); // Outputs: "Pine"
+  console.log(pineTree.name);    // Outputs: "Scots Pine"
+  console.log(Evergreen.definition()); // Outputs the specific definition for Evergreen trees
+  
